@@ -22,13 +22,13 @@ jobs:
       run: pip install pyinstaller
 
     - name: Build EXE
-      run: pyinstaller --onefile --windowed madlibs.py
+      run: pyinstaller --onefile --windowed ../../MadLibs/madlibs.py
 
     - name: Upload EXE
       uses: actions/upload-artifact@v4
       with:
         name: MadLibs-Windows
-        path: dist/madlibs.exe
+        path: ../../MadLibs/dist/madlibs.exe
 
 
   build-mac:
@@ -47,10 +47,10 @@ jobs:
       run: pip install pyinstaller
 
     - name: Build APP
-      run: pyinstaller --windowed --name MadLibs madlibs.py
+      run: pyinstaller --windowed --name MadLibs ../../MadLibs/madlibs.py
 
     - name: Upload APP
       uses: actions/upload-artifact@v4
       with:
         name: MadLibs-Mac
-        path: dist/MadLibs.app
+        path: ../../MadLibs/dist/MadLibs.app
