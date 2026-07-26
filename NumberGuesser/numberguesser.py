@@ -6,7 +6,7 @@ num = random.randint(1, 100)
 print('Computer chose a random number from 1-100, try to guess it')
 guess_count = 1
 
-while True:
+while guess_count < 6:
     user_choice = int(input(f'Guess #{guess_count}: '))
     if user_choice > num:
         print(f'Computers number is lower than {user_choice}')
@@ -16,3 +16,6 @@ while True:
         print(f'You guessed it! Computers number was {num}')
         break
     guess_count += 1
+    
+else:
+    print(f"You failed... Computers number was {num}")
