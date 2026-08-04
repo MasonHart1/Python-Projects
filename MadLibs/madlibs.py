@@ -5,6 +5,7 @@
 # get user inputs
 import re
 import tkinter as tk
+import subprocess
 
 paragraphs = [
     """
@@ -85,5 +86,11 @@ def submit():
     custom_height = 500
     root.geometry(f"{auto_width}x{custom_height}")
 
+
+def onclosing():
+    root.destroy()
+    subprocess.run(['python', 'Python Projects/main.py'])
+
+root.protocol("WM_DELETE_WINDOW", onclosing)
 
 root.mainloop()

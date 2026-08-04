@@ -2,6 +2,7 @@ import random
 import os
 import time
 from pyfiglet import Figlet
+import subprocess
 
 f = Figlet(font='doom')
 
@@ -90,11 +91,19 @@ while True:
     if phase > 5:
         print(f'The word was {word}')
         print(f.renderText('You lose'))
-        break
+        choice = input("Play again? (yes or no): ").strip().lower()                
+        if choice == "no":
+            subprocess.run(['python', 'Python Projects/main.py'])
+        else: subprocess.run(['python', 'Python Projects/Hangman/hangman.py'])
 
     if all(letter in user_guesses for letter in word):
         print(f.renderText("You win!"))
-        break
+        choice = input("Play again? (yes or no): ").strip().lower()
+        
+        if choice == "no":
+            subprocess.run(['python', 'Python Projects/main.py'])
+        else: subprocess.run(['python', 'Python Projects/Hangman/hangman.py'])
+            
     letter_guess = input('Guess a letter: ')
 
 

@@ -1,3 +1,5 @@
+import subprocess
+
 def calculator():
     print("Simple calculator att.")
 
@@ -14,3 +16,8 @@ def calculator():
         print("Invalid Input")
 
 calculator()
+
+choice = input("Exit? (yes or no): ").strip().lower()
+if choice == "yes":
+    subprocess.run(['python', 'Python Projects/main.py'])
+else: subprocess.run(['python', 'Python Projects/Calculator/calculator.py'])

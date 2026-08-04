@@ -2,18 +2,18 @@ import os
 import json
 import time
 import keyboard
+import subprocess
 
 
 def clear_console():
     os.system("cls" if os.name == "nt" else "clear")
 
-if os.path.exists("entries.json"):
-    with open("entries.json", "r") as file:
+if os.path.exists("passwords.json"):
+    with open("passwords.json", "r") as file:
         data = json.load(file)
 else:
     data = {"entries": {}}
 
-entries = data["entries"]
 
 entries = data["entries"]
 
@@ -32,7 +32,7 @@ def add_entry():
     username = input("Please enter username: ")
     password = input("Please enter password: ")
     entries[username] = password
-    with open("entries.json", "w") as file:
+    with open("passwords.json", "w") as file:
         json.dump(data, file, indent=4)
     clear_console()
     print("Username and password successfully added")
@@ -55,7 +55,7 @@ def delete_entry():
     selection = input("Enter username you would like to delete: ")
     if selection in entries:
         del entries[selection]
-        with open("entries.json", "w") as file:
+        with open("passwords.json", "w") as file:
             json.dump(data, file, indent=4)
         print("Password successfully deleted")
     else:
@@ -72,8 +72,7 @@ def exit_app():
         print(".", end="", flush=True)
     print()
     time.sleep(.5)
-    clear_console()
-
+    subprocess.run(['python', 'Python Projects/main.py'])
 
 def navigation():
     clear_console()

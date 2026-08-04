@@ -1,5 +1,6 @@
 import os
 from pyfiglet import Figlet
+import subprocess
 
 f = Figlet(font='doom')
 
@@ -33,15 +34,25 @@ def check_win(player):
     for a, b, c in win_conditions:
         if {squares[a], squares[b], squares[c]} == {player}:
             return True
+            
 
 while True:
     print(board.format(*squares))
     if check_win(players[1]):
         print(f.renderText(f'{players[1]} is the winner!'))
-        break
+        choice = input("Play again? (yes or no): ").strip().lower()
+        if choice == "yes":
+            continue
+        else:
+            subprocess.run(['python', 'Python Projects/main.py'])
+            
     if ' ' not in squares:
         print('Cats game!')
-        break
+        choice = input("Play again? (yes or no): ").strip().lower()
+        if choice == "yes":
+            continue
+        else:
+            subprocess.run(['python', 'Python Projects/main.py'])
     move = input(f'{players[0]} to move [0-8] ')
     if not move.isdigit() or not 0 <= int(move) <= 8 or squares[int(move)] != ' ':
         print("Invalid move")

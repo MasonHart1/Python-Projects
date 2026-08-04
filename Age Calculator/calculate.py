@@ -1,10 +1,26 @@
-user_name = input("Enter your name: ")
-print("Hello " + user_name)
+import subprocess
+from datetime import datetime as dt
+from dateutil.relativedelta import relativedelta
+import time
 
-user_age = input("Enter your age: ")
+user_name = input("Please enter your name: ")
 
-user_months = int(user_age) * 12
+user_birthdate = input("Please enter your birthdate (mm-dd-yyy): ")
 
-user_days = int(user_age) * 365
+try:
+    birthdate = dt.strptime(user_birthdate, "%m-%d-%Y")
+except ValueError:
+    print("Invalid date. please use the format mm-dd-yyyy")
+    time.sleep(1.5)
+    subprocess.run(['python', 'Python Projects/Age Calculator/calculate.py'])
 
-print(f'{user_name} is {user_age} years old, or {user_months} months old, or {user_days} days old')
+today = dt.now()
+
+age = relativedelta(today, birthdate)
+
+print(f'{user_name} is {age.years} years {age.months} months and {age.days} days old')
+
+
+choice = input("Exit? (yes or no): ").strip().lower()
+if choice == "yes": subprocess.run(['python', 'Python Projects/main.py'])
+else: subprocess.run(['python', 'Python Projects/Age Calculator/calculate.py'])
