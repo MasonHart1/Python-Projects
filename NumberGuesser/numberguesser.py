@@ -17,15 +17,15 @@ while guess_count < 6:
         print(f'You guessed it! Computers number was {num}')
         choice = input("Play again? (yes or no): ")        
         if choice == "no":
-            subprocess.run(['python', 'Python Projects/main.py'])
+            subprocess.run(['python', 'main.py'])
         else: 
-            subprocess.run(['python', 'Python Projects/NumberGuesser/numberguesser.py'])
+            subprocess.run(['python', 'NumberGuessernumberguesser.py'])
     guess_count += 1
 else:
     print(f"You failed... Computers number was {num}")
     choice = input("Play again? (yes or no): ")
 
     if choice == "no":
-        subprocess.run(['python', 'Python Projects/main.py'])
+        subprocess.run(['python', 'main.py'])
     else: 
-        subprocess.run(['python', 'Python Projects/NumberGuesser/numberguesser.py'])
+        subprocess.run(['python', 'NumberGuesser/numberguesser.py'])

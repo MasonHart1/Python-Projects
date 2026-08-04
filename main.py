@@ -23,7 +23,7 @@ def main():
     11. Exit
 """)
     try:
-        num = int(input("Select where you want to go: "))
+        num = int(input("Enter the number of the project you want to open: "))
     except ValueError:
         clear()
         print("Invalid input, try again")
@@ -38,16 +38,17 @@ def main():
         main()
         return
     match num:
-        case 1: subprocess.run(['python', 'Python Projects/Age Calculator/calculate.py'])
-        case 2: subprocess.run(['python', 'Python Projects/Calculator/calculator.py'])
-        case 3: subprocess.run(['python', 'Python Projects/Hangman/hangman.py'])
-        case 4: subprocess.run(['python', 'Python Projects/MadLibs/madlibs.py'])
-        case 5: subprocess.run(['python', 'Python Projects/NumberGuesser/numberguesser.py'])
-        case 6: subprocess.run(['python', 'Python Projects/PasswordManager/passwordmanager.py'])
-        case 7: subprocess.run(['python', 'Python Projects/Random Password Generator/main.py'])
-        case 8: subprocess.run(['python', 'Python Projects/RPS/rps.py'])
-        case 9: subprocess.run(['python', 'Python Projects/TicTacToe/tictactoe.py'])
-        case 10: subprocess.run(['python', 'Python Projects/TodoList/todolist.py'])
-        case 11: os.abort()
+        case 1: subprocess.run(['python', 'Age Calculator/calculate.py'])
+        case 2: subprocess.run(['python', 'Calculator/calculator.py'])
+        case 3: subprocess.run(['python', 'Hangman/hangman.py'])
+        case 4: subprocess.run(['python', 'MadLibs/madlibs.py'])
+        case 5: subprocess.run(['python', 'NumberGuesser/numberguesser.py'])
+        case 6: subprocess.run(['python', 'PasswordManager/passwordmanager.py'])
+        case 7: subprocess.run(['python', 'Random Password Generator/main.py'])
+        case 8: subprocess.run(['python', 'RPS/rps.py'])
+        case 9: subprocess.run(['python', 'TicTacToe/tictactoe.py'])
+        case 10: subprocess.run(['python', 'TodoList/todolist.py'])
+        case 11: 
+            print("Goodbye!"); time.sleep(1.5); clear()
 
 main()

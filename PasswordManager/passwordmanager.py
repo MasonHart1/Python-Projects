@@ -72,7 +72,7 @@ def exit_app():
         print(".", end="", flush=True)
     print()
     time.sleep(.5)
-    subprocess.run(['python', 'Python Projects/main.py'])
+    subprocess.run(['python', 'main.py'])
 
 def navigation():
     clear_console()

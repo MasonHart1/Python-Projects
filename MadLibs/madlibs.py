@@ -89,7 +89,7 @@ def submit():
 
 def onclosing():
     root.destroy()
-    subprocess.run(['python', 'Python Projects/main.py'])
+    subprocess.run(['python', 'main.py'])
 
 root.protocol("WM_DELETE_WINDOW", onclosing)
 

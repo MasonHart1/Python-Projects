@@ -12,5 +12,5 @@ print(password)
 choice = input ('New password? (yes or no): ').strip().lower()
 
 if choice == "no":
-    subprocess.run(['python', 'Python Projects/main.py'])
-else: subprocess.run(['python', 'Python Projects/Random Password Generator/main.py'])
+    subprocess.run(['python', 'main.py'])
+else: subprocess.run(['python', 'Random Password Generator/main.py'])
