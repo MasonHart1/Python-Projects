@@ -52,36 +52,3 @@ def main():
             print("Goodbye!"); time.sleep(1.5); clear()
 
 main()
-
-# {
-#     "tasks": [
-#         {
-#             "name": "Rock Paper Scissors",
-#             "completed": true
-#         },
-#         {
-#             "name": "Dice Roller",
-#             "completed": false
-#         },
-#         {
-#             "name": "Quiz Game",
-#             "completed": false
-#         },
-#         {
-#             "name": "Morse Code Translator",
-#             "completed": false
-#         },
-#         {
-#             "name": "Unit Converter",
-#             "completed": false
-#         },
-#         {
-#             "name": "Snake Game",
-#             "completed": false
-#         },
-#         {
-#             "name": "Music Player",
-#             "completed": false
-#         }
-#     ]
-# }
