@@ -84,6 +84,6 @@ def navigation():
         case 2: view_list()
         case 3: mark_complete()
         case 4: delete_from_list()
-        case 5: subprocess.run(['python', 'Python Projects/main.py'])
+        case 5: subprocess.run(['python', 'main.py'])
 
 navigation()

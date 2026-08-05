@@ -93,16 +93,16 @@ while True:
         print(f.renderText('You lose'))
         choice = input("Play again? (yes or no): ").strip().lower()                
         if choice == "no":
-            subprocess.run(['python', 'Python Projects/main.py'])
-        else: subprocess.run(['python', 'Python Projects/Hangman/hangman.py'])
+            subprocess.run(['python', 'main.py'])
+        else: subprocess.run(['python', 'Hangman/hangman.py'])
 
     if all(letter in user_guesses for letter in word):
         print(f.renderText("You win!"))
         choice = input("Play again? (yes or no): ").strip().lower()
         
         if choice == "no":
-            subprocess.run(['python', 'Python Projects/main.py'])
-        else: subprocess.run(['python', 'Python Projects/Hangman/hangman.py'])
+            subprocess.run(['python', 'main.py'])
+        else: subprocess.run(['python', 'Hangman/hangman.py'])
             
     letter_guess = input('Guess a letter: ')
 

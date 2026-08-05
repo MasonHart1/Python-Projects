@@ -65,14 +65,14 @@ def start_game():
         print("GAME OVER USER WINS")
         choice = input("Play again? (yes or no): ").strip().lower()
         if choice == "no":
-            subprocess.run(['python', 'Python Projects/main.py'])
-        else: subprocess.run(['python', 'Python Projects/RPS/rps.py'])
+            subprocess.run(['python', 'main.py'])
+        else: subprocess.run(['python', 'RPS/rps.py'])
     else:
         clear_console()
         print("GAME OVER AI WINS")
         choice = input("Play again? (yes or no): ").strip().lower()
         if choice == "no":
-            subprocess.run(['python', 'Python Projects/main.py'])
-        else: subprocess.run(['python', 'Python Projects/RPS/rps.py'])
+            subprocess.run(['python', 'main.py'])
+        else: subprocess.run(['python', 'RPS/rps.py'])
 
 start_game()
