@@ -91,16 +91,16 @@ while True:
     if phase > 5:
         print(f'The word was {word}')
         print(f.renderText('You lose'))
-        choice = input("Play again? (yes or no): ").strip().lower()                
-        if choice == "no":
+        choice = input("Play again? (y/n): ").strip().lower()                
+        if choice == "n":
             subprocess.run(['python', 'main.py'])
         else: subprocess.run(['python', 'Hangman/hangman.py'])
 
     if all(letter in user_guesses for letter in word):
         print(f.renderText("You win!"))
-        choice = input("Play again? (yes or no): ").strip().lower()
+        choice = input("Play again? (y/n): ").strip().lower()
         
-        if choice == "no":
+        if choice == "n":
             subprocess.run(['python', 'main.py'])
         else: subprocess.run(['python', 'Hangman/hangman.py'])
             

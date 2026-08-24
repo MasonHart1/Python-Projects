@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.14.6
+
 import subprocess
 from datetime import datetime as dt
 from dateutil.relativedelta import relativedelta
@@ -19,6 +21,6 @@ age = relativedelta(today, birthdate)
 print(f'You are {age.years} years {age.months} months and {age.days} days old')
 
 
-choice = input("Exit? (yes or no): ").strip().lower()
-if choice == "yes": subprocess.run(['python', 'main.py'])
+choice = input("Exit? (y/n): ").strip().lower()
+if choice == "y": subprocess.run(['python', 'main.py'])
 else: subprocess.run(['python', 'calculate.py'])

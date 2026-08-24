@@ -1,4 +1,3 @@
-
 {
     "tasks": [
         {
@@ -6,19 +5,23 @@
             "completed": true
         },
         {
-            "name": "Dice Roller",
-            "completed": false
-        },
-        {
-            "name": "Quiz Game",
-            "completed": false
-        },
-        {
             "name": "Morse Code Translator",
-            "completed": false
+            "completed": true
+        },
+        {
+            "name": "Music Player",
+            "completed": true
         },
         {
             "name": "Unit Converter",
+            "completed": true
+        },
+        {
+            "name": "Quiz Game",
+            "completed": true
+        },
+        {
+            "name": "Dice Roller",
             "completed": false
         },
         {
@@ -26,8 +29,8 @@
             "completed": false
         },
         {
-            "name": "Music Player",
-            "completed": false
+            "name": "fix tic tac toe",
+            "completed": true
         }
     ]
 }

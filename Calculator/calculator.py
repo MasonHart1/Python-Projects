@@ -17,7 +17,7 @@ def calculator():
 
 calculator()
 
-choice = input("Exit? (yes or no): ").strip().lower()
-if choice == "yes":
+choice = input("Exit? (y/n): ").strip().lower()
+if choice == "y":
     subprocess.run(['python', 'main.py'])
 else: subprocess.run(['python', 'Calculator/calculator.py'])

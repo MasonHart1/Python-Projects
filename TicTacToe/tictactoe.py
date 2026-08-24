@@ -40,17 +40,17 @@ while True:
     print(board.format(*squares))
     if check_win(players[1]):
         print(f.renderText(f'{players[1]} is the winner!'))
-        choice = input("Play again? (yes or no): ").strip().lower()
-        if choice == "yes":
-            continue
+        choice = input("Play again? (y/n): ").strip().lower()
+        if choice == "y":
+            subprocess.run(['python', 'TicTacToe/tictactoe.py'])
         else:
             subprocess.run(['python', 'main.py'])
             
     if ' ' not in squares:
         print('Cats game!')
-        choice = input("Play again? (yes or no): ").strip().lower()
-        if choice == "yes":
-            continue
+        choice = input("Play again? (y/n): ").strip().lower()
+        if choice == "y":
+            subprocess.run(['python', 'TicTacToe/tictactoe.py'])
         else:
             subprocess.run(['python', 'main.py'])
     move = input(f'{players[0]} to move [0-8] ')

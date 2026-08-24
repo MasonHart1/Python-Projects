@@ -63,15 +63,15 @@ def start_game():
     if plr_wins == 3:
         clear_console()
         print("GAME OVER USER WINS")
-        choice = input("Play again? (yes or no): ").strip().lower()
-        if choice == "no":
+        choice = input("Play again? (y/n): ").strip().lower()
+        if choice == "n":
             subprocess.run(['python', 'main.py'])
         else: subprocess.run(['python', 'RPS/rps.py'])
     else:
         clear_console()
         print("GAME OVER AI WINS")
-        choice = input("Play again? (yes or no): ").strip().lower()
-        if choice == "no":
+        choice = input("Play again? (y/n): ").strip().lower()
+        if choice == "n":
             subprocess.run(['python', 'main.py'])
         else: subprocess.run(['python', 'RPS/rps.py'])
 

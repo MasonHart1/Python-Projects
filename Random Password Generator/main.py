@@ -9,8 +9,8 @@ for x in range(16):
     password += random.choice(chars)
 
 print(password)
-choice = input ('New password? (yes or no): ').strip().lower()
+choice = input ('New password? (y/n): ').strip().lower()
 
-if choice == "no":
+if choice == "n":
     subprocess.run(['python', 'main.py'])
 else: subprocess.run(['python', 'Random Password Generator/main.py'])

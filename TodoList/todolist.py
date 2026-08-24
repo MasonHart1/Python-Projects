@@ -1,7 +1,7 @@
 import json
 import time
 import os
-import keyboard
+from pynput import keyboard
 import subprocess
 
 def backtomain():
@@ -30,18 +30,25 @@ def add_to_list():
     time.sleep(2)
     navigation()
 
+def on_press(key):
+    if key == keyboard.Key.esc:
+        return False
+
 def view_list():
     clear_console()
+    tasks.sort(key=lambda task: not task['completed'])
     for index, task in enumerate(tasks, start=1):
         status = "✅" if task['completed'] else "❌"
         print(f"{index}) {task['name']} {status}")
 
     print("\nPress esc when done viewing")
-    keyboard.wait("esc")
+    with keyboard.Listener(on_press=on_press) as listener:
+        listener.join()
     navigation()
 
 def mark_complete():
     clear_console()
+    tasks.sort(key=lambda task: not task['completed'])
     for index, task in enumerate(tasks, start=1):
         status = "✅" if task['completed'] else "❌"
         print(f"{index}) {task["name"]} {status}")
@@ -54,13 +61,14 @@ def mark_complete():
     navigation()
 def delete_from_list():
     clear_console()
+    tasks.sort(key=lambda task: not task['completed'])
     for index, task in enumerate(tasks, start=1):
         status = "✅" if task['completed'] else "❌"
         print(f"{index}) {task["name"]} {status}")
-    task = int(input("\n\nPlease select a task to delete: "))
-    print(f"Successfully deleted task: {tasks[task - 1]}")
-    tasks.pop(task - 1)
+    task = int(input("\n\nPlease select a task to delete: ")) - 1
     clear_console()
+    print(f"Successfully deleted task: {tasks[task]["name"]}")
+    tasks.pop(task)
     save_tasks()
     time.sleep(2)
     navigation()
