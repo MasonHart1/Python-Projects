@@ -7,10 +7,8 @@ import sys
 try:
     from config_local import PYTHON_312, PYTHON_314
     print("Loaded")
-    time.sleep(5)
 except ImportError:
     print("Not Loaded")
-    time.sleep(5)
     PYTHON_312 = "python3.12"
     PYTHON_314 = "python3.14"
 def clear():
@@ -34,7 +32,10 @@ def main():
     12. Morse Code Translator
     13. Unit Converter
     14. Quiz Game
-    15. Exit
+    15. Dice Rolling
+    16. Snake Game
+    17. Typing speed test
+    18. Exit
 """
     print(menu)
     try:
@@ -67,6 +68,9 @@ def main():
         case 12: subprocess.run([PYTHON_314, 'MorseCodeTranslator/main.py'])
         case 13: subprocess.run([PYTHON_314, 'UnitConverter/main.py'])
         case 14: subprocess.run([PYTHON_314, 'QuizGame/main.py'])
-        case 15: print("Goodbye!"); time.sleep(1.5); clear()
+        case 15: subprocess.run([PYTHON_314, 'DiceRolling/main.py'])
+        case 16: subprocess.run([PYTHON_314, 'SnakeGame/main.py'])
+        case 17: subprocess.run([PYTHON_314, 'TypeTest/main,py'])
+        case 18: print("Goodbye!"); time.sleep(1.5); clear()
 
 main()

@@ -21,15 +21,15 @@
             "completed": true
         },
         {
+            "name": "fix tic tac toe",
+            "completed": true
+        },
+        {
             "name": "Dice Roller",
-            "completed": false
+            "completed": true
         },
         {
             "name": "Snake Game",
-            "completed": false
-        },
-        {
-            "name": "fix tic tac toe",
             "completed": true
         }
     ]
