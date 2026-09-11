@@ -5,6 +5,7 @@ import time
 import sys
 
 try:
+    # config_local has the path to my local python 3.12 and python 3.14
     from config_local import PYTHON_312, PYTHON_314
     print("Loaded")
 except ImportError:
